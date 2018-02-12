@@ -49,13 +49,13 @@ const generateRandomVehicleData = () => {
   const color = fkCommerce.color();
   const condition = fkRandom.arrayElement(vehicleCondition);
   const year = String(
-    condition === "new"
+    condition === "New"
       ? new Date().getFullYear()
       : new Date(fkDate.past(10)).getFullYear()
   );
   const featuredVehicleObj = { make, model, trim, condition, color, year };
   const mileage = determineMileage(year);
-  return condition === "new"
+  return condition === "New"
     ? featuredVehicleObj
     : { ...featuredVehicleObj, mileage };
 };
@@ -79,7 +79,7 @@ const generateDealerObj = (len = 10, inv_num = 1) => {
       ...generateInventoryInfo(inv_num)
     });
   }
-  return JSON.stringify({ dealers });
+  return { dealers };
 };
 
-generateDealerObj(NUM_OBJ, NUM_FEATURED_INV);
+module.exports = generateDealerObj;
