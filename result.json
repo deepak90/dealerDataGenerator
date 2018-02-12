@@ -1,0 +1,81 @@
+{
+  "dealers": [
+    {
+      "firstName": "Orson",
+      "lastName": "Steward",
+      "dealershipName": "Rosenbaum Group",
+      "state": "California",
+      "email": "Lina88@example.com",
+      "featuredInventory": [
+        {
+          "make": "Kia",
+          "model": "Sportage",
+          "trim": "ZX",
+          "year": "2014",
+          "condition": "preowned",
+          "color": "Green",
+          "mileage": 19245
+        },
+        {
+          "make": "Lexus",
+          "model": "RX Hybrid",
+          "trim": "Sport",
+          "year": "2018",
+          "condition": "new",
+          "color": "Gray"
+        }
+      ]
+    },
+    {
+      "firstName": "Max",
+      "lastName": "Filipponi",
+      "dealershipName": "Emmerich Inc",
+      "state": "West Virginia",
+      "email": "Esther_Cartwright@example.org",
+      "featuredInventory": [
+        {
+          "make": "Honda",
+          "model": "Civic",
+          "trim": "ZX",
+          "year": "2018",
+          "condition": "new",
+          "color": "Black"
+        },
+        {
+          "make": "Ford",
+          "model": "focus",
+          "trim": "LX",
+          "year": "2018",
+          "condition": "new",
+          "color": "Deep Red"
+        }
+      ]
+    },
+    {
+      "firstName": "Wilber",
+      "lastName": "Zartman",
+      "dealershipName": "Tremblay - Bayer",
+      "state": "Vermont",
+      "email": "Antwan63@example.org",
+      "featuredInventory": [
+        {
+          "make": "Ford",
+          "model": "Fiesta",
+          "trim": "LX",
+          "year": "2013",
+          "mileage": 42341,
+          "condition": "preowned",
+          "color": "Slate Gray"
+        },
+        {
+          "make": "Ford",
+          "model": "focus",
+          "trim": "LX",
+          "year": "2018",
+          "condition": "new",
+          "color": "Midnight Blue"
+        }
+      ]
+    }
+  ]
+}
