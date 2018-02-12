@@ -70,7 +70,7 @@ const generateInventoryInfo = len => {
   return { featuredInventory };
 };
 
-generateDealerObj = (len = 10, inv_num = 1) => {
+const generateDealerObj = (len = 10, inv_num = 1) => {
   const dealers = [];
   for (let i = 0; i < len; i++) {
     dealers.push({
