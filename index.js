@@ -82,4 +82,4 @@ generateDealerObj = (len = 10, inv_num = 1) => {
   return JSON.stringify({ dealers });
 };
 
-console.log(generateDealerObj(NUM_OBJ, NUM_FEATURED_INV));
+generateDealerObj(NUM_OBJ, NUM_FEATURED_INV);
