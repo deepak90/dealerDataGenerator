@@ -1,13 +1,53 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const path = require('path');
+const bodyParser= require('body-parser');
+const {MongoClient} = require('mongodb');
+const faker = require("faker");
+const config = require('./config.json');
+const {
+    random: fkRandom
+  } = faker;
 
-const dealerObj = require('./dealers')
+const app = express();
+const dealerObj = require('./dealers');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+let db;
+const dbUsername = config.username;
+const dbPassword = config.password;
+const dbURL = `mongodb://${dbUsername}:${dbPassword}@ds233218.mlab.com:33218/applicant`;
+
+
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, "public")));
+app.set('view engine', 'ejs');
+
+app.get("/", (req, res)=> {
+    db.collection('applicants').find().toArray((err, results) => {
+        res.render("index.ejs", {applicants:results});
+    });
+});
+
+app.post("/new", (req, res) => {
+    const uuid = fkRandom.uuid();
+    const question = JSON.stringify(dealerObj(50, 3));
+    req = {...req.body, uuid, question}
+    db.collection('applicants').save(req, (err, result) => {
+        if (err) return console.log(err);
+        res.redirect('/');
+    });
+});
 
 app.get('/dealers',(req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(dealerObj(50, 3)));
-})
+});
 
-app.listen(3001, () => console.log('listening on port 3001'))
+MongoClient.connect(dbURL , (err,client) => {
+    if (err) return console.log(err);
+    db = client.db('applicant');
+    app.listen(3001, () => {
+        console.log("listening on port 3001");
+    });
+})
