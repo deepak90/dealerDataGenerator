@@ -5,5 +5,5 @@ The generated data is similar to the one in result.json.
 
 ```
 npm install
-node index.js
+npm run start
 ```
