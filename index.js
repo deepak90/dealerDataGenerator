@@ -53,9 +53,11 @@ const generateRandomVehicleData = () => {
       ? new Date().getFullYear()
       : new Date(fkDate.past(10)).getFullYear()
   );
-  const vehicleObj = { make, model, trim, condition, color, year };
+  const featuredVehicleObj = { make, model, trim, condition, color, year };
   const mileage = determineMileage(year);
-  return condition === "new" ? vehicleObj : { ...vehicleObj, mileage };
+  return condition === "new"
+    ? featuredVehicleObj
+    : { ...featuredVehicleObj, mileage };
 };
 
 const generateInventoryInfo = len => {
