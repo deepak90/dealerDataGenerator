@@ -10,9 +10,6 @@ const {
   random: fkRandom
 } = faker;
 
-const NUM_OBJ = 5;
-const NUM_FEATURED_INV = 4;
-
 const generateBasicInfo = () => {
   const firstName = fkName.firstName();
   const lastName = fkName.lastName();
