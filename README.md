@@ -6,6 +6,7 @@ The generated data is similar to the one in result.json.
 ### Running the Generator
 ```
 npm install
+nvm use
 npm run start
 ```
 
