@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 app.post("/new", (req, res) => {
   const uuid = fkRandom.uuid();
   const question = dealerObj(50, 3);
-  const answer = solver(question);
+  const answer = solver(question, "Vermont");
   req = { ...req.body, uuid, question, answer };
   db.collection("applicants").save(req, (err, result) => {
     if (err) return console.log(err);
